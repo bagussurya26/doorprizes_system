@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Doorprize Randomizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🎉 BCA Kantor Wilayah 1 Doorprize Event 🎉</h1>
+
+<!-- CONTROL BAR (HALAMAN UTAMA SAJA) -->
+<div id="controlBar">
+    <button onclick="resetAllWinners()">🔄 Reset Semua</button>
+
+    <label class="fileBtn">
+        📥 Import Peserta
+        <input type="file" id="excelInput" accept=".xlsx,.xls,.csv">
+    </label>
+
+    <label class="fileBtn">
+        🎁 Import Hadiah
+        <input type="file" id="prizeExcelInput" accept=".xlsx,.xls,.csv">
+    </label>
+
+    <button onclick="exportExcel()">📤 Excel</button>
+    <button onclick="exportPDF()">📄 PDF</button>
+    <button onclick="toggleFullscreen()">🖥 Fullscreen</button>
+</div>
+
+<!-- HALAMAN UTAMA -->
+<div id="prizePage" class="page active">
+    <div id="prizeList" class="grid"></div>
+</div>
+
+<!-- HALAMAN UNDIAN -->
+<div id="drawPage" class="page">
+    <h1 id="prizeTitle"></h1>
+
+    <div class="quota-box">
+        Jumlah Pemenang:
+        <input type="number" id="quotaInput" min="1" value="1">
+    </div>
+
+    <div id="rollingBox">Siap Diundi...</div>
+
+    <button id="drawBtn">🎯 UNDI SEKARANG</button>
+
+
+    <div id="winnerListLive"></div>
+
+    <div class="draw-actions">
+        <button onclick="resetPrize()">🔄 Reset Hadiah Ini</button>
+        <button id="lockBtn" onclick="lockPrize()">🔒 LOCK</button>
+        <button onclick="backToHome()">⬅ Kembali</button>
+    </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="rollSound" src="https://assets.mixkit.co/sfx/preview/mixkit-fast-small-sweep-transition-166.mp3"></audio>
+<audio id="winSound" src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3"></audio>
+
+<!-- LIBRARY -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>

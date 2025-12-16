@@ -1,0 +1,212 @@
+/* ================= GLOBAL ================= */
+body {
+    background: #020617;
+    color: #e5e7eb;
+    font-family: "Segoe UI", Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+    color: #f8fafc;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* ================= CONTROL BAR ================= */
+#controlBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+#controlBar button,
+.fileBtn {
+    background: #38bdf8;
+    color: #020617;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+}
+
+#controlBar button:hover,
+.fileBtn:hover {
+    background: #0ea5e9;
+}
+
+.fileBtn input {
+    display: none;
+}
+
+/* ================= PAGE ================= */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ================= GRID HADIAH ================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #020617;
+    border: 1px solid #1e293b;
+    padding: 25px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    border-color: #38bdf8;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.winner-list {
+    margin-top: 12px;
+    color: #4ade80;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ================= DRAW PAGE ================= */
+.quota-box {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.quota-box input {
+    width: 90px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 6px;
+    border: none;
+    padding: 4px;
+}
+
+#rollingBox {
+    margin: 25px auto;
+    padding: 25px;
+    width: 70%;
+    font-size: 36px;
+    background: #000;
+    border-radius: 16px;
+    color: #f8fafc;
+    min-height: 80px;
+}
+
+/* ================= BUTTONS ================= */
+#drawBtn {
+    background: #22c55e;
+    color: #020617;
+    padding: 14px 36px;
+    font-size: 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+#drawBtn:hover {
+    background: #16a34a;
+}
+
+.draw-actions {
+    margin-top: 25px;
+}
+
+.draw-actions button {
+    margin: 6px;
+    background: #475569;
+    color: #f8fafc;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.draw-actions button:hover {
+    background: #64748b;
+}
+
+/* ================= LOCK BUTTON ================= */
+#lockBtn {
+    background: #facc15;
+    color: #020617;
+    font-weight: bold;
+}
+
+#lockBtn:disabled {
+    background: #64748b;
+    color: #cbd5f5;
+    cursor: not-allowed;
+}
+
+/* ================= WINNER DISPLAY ================= */
+#winnerListLive {
+    margin-top: 25px;
+    font-size: 28px;
+    line-height: 1.6;
+    color: #4ade80;
+    word-wrap: break-word;
+}
+
+/* ================= REMOVE WINNER BUTTON ================= */
+#winnerListLive button {
+    background: #ef4444;
+    border: none;
+    color: white;
+    margin: 0 6px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#winnerListLive button:hover {
+    background: #dc2626;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    #rollingBox {
+        width: 95%;
+        font-size: 26px;
+    }
+
+    #winnerListLive {
+        font-size: 22px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+}
