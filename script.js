@@ -142,7 +142,7 @@ document.getElementById("drawBtn").onclick = () => {
         saveData();
         renderPrizes();
         updateDrawInfo();
-    }, 15000);
+    }, 5000);
 };
 
 // ================= REMOVE / GUGUR =================
@@ -274,3 +274,4 @@ function toggleFullscreen() {
         document.exitFullscreen();
     }
 }
+
