@@ -36,6 +36,7 @@ function resetRolling() {
     }
 
     const rollSound = document.getElementById("rollSound");
+
     rollSound.pause();
     rollSound.currentTime = 0;
 
@@ -95,15 +96,14 @@ function updateDrawInfo() {
             ? formatWinners(prize.winners, prize.locked)
             : "-";
 
-    const lockBtn = document.getElementById("lockBtn");
-    lockBtn.innerText = prize.locked ? "🔓 UNLOCK" : "🔒 LOCK";
+    document.getElementById("lockBtn").innerText =
+        prize.locked ? "🔓 UNLOCK" : "🔒 LOCK";
 }
 
 // ================= DRAW PROCESS =================
 document.getElementById("drawBtn").onclick = () => {
     const prize = prizes[currentPrizeIndex];
     if (prize.locked) return alert("Hadiah sedang di-LOCK");
-
     if (rollingInterval || rollingTimeout) return;
 
     const quota = parseInt(document.getElementById("quotaInput").value);
@@ -123,7 +123,7 @@ document.getElementById("drawBtn").onclick = () => {
     }, 80);
 
     rollingTimeout = setTimeout(() => {
-        resetRolling();
+        resetRolling(); // 🔥 stop drumroll + rolling
 
         let newWinners = [];
         for (let i = 0; i < missing; i++) {
@@ -136,13 +136,13 @@ document.getElementById("drawBtn").onclick = () => {
         document.getElementById("rollingBox").innerText =
             newWinners.join(" | ");
 
-        document.getElementById("winSound").play();
-        confetti({ particleCount: 200, spread: 100 });
+        winSound.play();
+        confetti({ particleCount: 2000, spread: 1000 });
 
         saveData();
         renderPrizes();
         updateDrawInfo();
-    }, 3000);
+    }, 15000);
 };
 
 // ================= REMOVE / GUGUR =================
